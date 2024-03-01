@@ -18,4 +18,12 @@ while True:
     elif valik==5:
         sorteeritud_palgad(inimesed, palgad) 
         print(inimesed, palgad) 
+    elif valik==6:
+        sorteeritud_akahanevas_palgad(inimesed, palgad)
         print(inimesed, palgad)
+    elif valik==7:
+        vordsed_palgad(inimesed, palgad)
+    elif valik ==8:
+        palk_nime_jargi(inimesed, palgad) 
+    elif valik ==9:
+        palgaga_inimeste_nimekiri(inimesed, palgad)
