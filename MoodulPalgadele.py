@@ -85,7 +85,72 @@ def sorteeritud_palgad(i:list,p:list):
                 i[m],i[n]=i[n],i[m]
     return i,p 
 
+def sorteeritud_akahanevas_palgad(i:list,p:list):
+    """Funktsioon sorteerib palgad
+    param list i: Inimeste järjend
+    param list p: Palgate järjend
+    rtype: list, list
+    """
+    for n in range(0,len(i)):
+        for m in range(n,len(i)):
+            if p[n]<p[m]:
+                p[m],p[n]=p[n],p[m]
+                i[m],i[n]=i[n],i[m]
+    return i,p 
 
+def vordsed_palgad(i:list,p:list):
+    """Funktsioon leiab inimesed kellel on võrdne palk
+    param list i: Inimeste järjend
+    param list p: Palgate järjend
+    rtype: list, list
+    """
+    duplikaat=[x for x in p if p.count(x)>1]
+    duplikaat=list(set(duplikaat)) 
+    for palk in duplikaat:
+        n=p.count(palk) 
+        samde_palkade_arv=-1
+        print(palk)
+        for j in range(n):
+            samde_palkade_arv=p.index(palk,samde_palkade_arv+1)
+            nimi=i[samde_palkade_arv]
+            print("Selliste inimeste palk on sama: "+str(nimi), (palk))
+    return i,p
+
+def palk_nime_jargi(i:list,p:list)->dict:
+    """Funktsioon leiab palk nime järgi
+    param list i: Inimeste järjend
+    param list p: Palgate järjend
+    rtype: list, list
+    """
+    nimi=input("Nimi: ").capitalize()
+    palgad = []
+    for j in range(len(i)):
+        if i[j] == nimi:
+            palgad.append(p[j])   
+    print (nimi,"palgad on",palgad)
+    return i,p
+
+
+def palgaga_inimeste_nimekiri(i:list,p:list): 
+    """Funktsioon leiab inimesed kes saavad rohkem/vähem kui määratud summa
+        param list i: Inimeste järjend
+        param list p: Palgate järjend
+        rtype: list, list
+    """
+    palgad=int(input("1-rohkem või 2-vähem: "))
+    summa=int(input("Palk: "))
+    nimekiri=[] 
+    if palgad==1:
+        for j in range(len(i)):
+            if summa<p[j]:
+                nimekiri.append((i[j], p[j]))
+        print("Nimekiri inimestest, kellel on palgad, kes saavad rohkem "+str(summa), "on" +str(nimekiri))
+    elif palgad==2:
+        for j in range(len(i)):
+            if summa>p[j]:
+                nimekiri.append((i[j], p[j]))
+        print("Nende inimeste nimekiri, kes saavad vähem palka "+str(summa), "on" +str(nimekiri))
+    return i,p
 
 
     
