@@ -2,7 +2,7 @@ from MoodulPalgadele import *
 palgad=[1200,2500,750,395,1200]
 inimesed=["A","B","C","D","E"] 
 while True:
-    print("0-Naita andmed veerudes\n1-andemete lisamine\n2-andmete kustutamine\n3-kõige suurim palk\n4-kõige väiksem palk\n5-sorteeritud palgad\n") 
+    print("0-Naita andmed veerudes\n1-andemete lisamine\n2-andmete kustutamine\n3-kõige suurim palk\n4-kõige väiksem palk\n5-sorteeritud palgad\n6-sorteeritud akahanevas palgad\n7-võrdsed palgad\n8-leia palk nime jargi\n9-inimeste loend\n10 - keskmine palk\n") 
     valik=int(input()) 
     if valik==1:
         inimesed,palgad=inimeste_ja_palkade_lisamine(inimesed,palgad,int(input("Mitu inimest lisame? ")))
@@ -27,3 +27,5 @@ while True:
         palk_nime_jargi(inimesed, palgad) 
     elif valik ==9:
         palgaga_inimeste_nimekiri(inimesed, palgad)
+    elif valik ==10:
+        keskmine_palk(inimesed, palgad)
