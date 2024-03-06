@@ -153,4 +153,17 @@ def palgaga_inimeste_nimekiri(i:list,p:list):
     return i,p
 
 
+def keskmine_palk(i:list,p:list): 
+    """
+    param list i: Inimeste järjend
+    param list p: Palgate järjend
+    """
+    keskmine=sum(p)/len(p) 
+    print("Keskmine palk on: " +str(keskmine)) 
+    for j in range(len(p)):
+        if p[j]>=keskmine:
+            print(f"{i[j]} saab üle keskmise palka, ta saab {p[j]}") 
+    return i,p 
+
+
     
